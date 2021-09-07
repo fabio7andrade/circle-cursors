@@ -1,0 +1,165 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  &:focus {
+    outline: none;
+  }
+}
+
+* {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  height: 80vh;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace;
+  cursor: none;
+}
+
+#wrapper {
+  color: rgb(97, 97, 97);
+  position: relative;
+  width: 70%;
+  height: 80%;
+}
+
+#circle {
+  position: fixed;
+  z-index: 5;
+  width: 30px;
+  height: 30px;
+  background-color: rgb(216, 216, 216);
+  border-radius: 50%;
+  pointer-events: none;
+  transition:
+    background ease-in 10ms,
+    box-shadow ease-in 150ms,
+    transform ease-in 15ms;
+
+    transform: translate3d(0, 0, 0);
+}
+
+.titulo {
+  margin-top: 0px;
+  margin-bottom: 40px;
+  color: rgb(97, 97, 97);
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-align: center;
+  transition: 0.5s;
+}
+
+.titulo:hover {
+  -moz-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+.titulo:hover ~ #circle {
+  transform: scale(0.4) translate3d(0, 0, 0);
+  background-color:rgb(216, 216, 216);
+}
+
+.box {
+  height: 25%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#box-1 {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #fad2e1;
+  transition: 1s;
+}
+
+#box-1:hover {
+  background-color:#fcc0d7;
+}
+
+#box-1:hover ~ #circle {
+  background-color: #ffbfd7;
+  box-shadow: 0 0 0 0 transparent, inset 0em -0.3em 0.4em 0.2em #c21a58c2;
+}
+
+#box-2 {
+  background-color: #dfe7fd;
+  transition: 1s;
+}
+
+#box-2:hover {
+  background-color:#bdcaf1;
+}
+
+#box-2:hover ~ #circle {
+  background-color: transparent;
+  /* Dica: usar box-shadow em vez de border para evitar alterar as dimensões do cursor, o que o forçaria a ficar fora do centro até que o mouse se movesse novamente: */
+  box-shadow: 0 0 0 3px #2d6a4fc0;
+}
+
+#box-3 {
+  background-color: #fdffb6;
+  transition: 1s;
+}
+
+#box-3:hover {
+  background-color:#f0f391;
+}
+
+#box-3:hover ~ #circle {
+  /* alterar o tamanho com escala () em vez de largura e altura para melhor desempenho: */
+  transform: scale(0.5) translate3d(0, 0, 0);
+  background-color: #eef535;
+}
+
+#box-4 {
+  color: rgb(97, 97, 97);
+  background-color: #caffbf;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transition: 1s;
+}
+
+#box-4:hover {
+  background-color:#aafc99;
+}
+
+#box-4:hover ~ #circle {
+  background-image: linear-gradient(to top, #1cbb73c4  0%, #fdffb6 100%);
+}
+
+.citation {
+  position: fixed;
+  text-align: center;
+  bottom: 0;
+  left: 25%;
+  z-index: 100;
+  cursor: default;
+}
+
+p {
+  margin: 0;
+  padding: 10px;
+  font-size: 12px;
+  color: rgb(97, 97, 97);
+  }
+
+a {
+  color: rgb(54, 54, 236);
+  cursor: pointer;
+  &:hover {
+    color: indigo;
+  }
+}
+
+
